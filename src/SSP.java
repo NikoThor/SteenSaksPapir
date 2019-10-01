@@ -26,5 +26,11 @@ public class SSP {
        if (b == Haand.SAKS)  {return resultat = 2; }
        if (b == Haand.PAPIR) {return resultat =  0; }
        return resultat;}
-    // TODO flerekampe(){}
+    // TODO rounds
+
+
+    //For flererunder() skal spilleren kunne vælge hvor mange runder der skal slås
+    //Spilleren og computeren vælger et træk af gangen og en vinder runden findes
+    //derefter nulsættes deres træk og igen
+    //til sidst findes en vinder ved den der har vundet flest runder
 }
