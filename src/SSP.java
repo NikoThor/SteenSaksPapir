@@ -1,4 +1,58 @@
+import java.util.Scanner;
+
 public class SSP {
+
+    public static void startSpillet(SSP runde1) {
+        Haand computerensHaand = null;
+        int haandInt = (int) (Math.random() * 3 + 1);
+
+        if (haandInt == 1) {
+            computerensHaand = Haand.STEN;
+        }
+        if (haandInt == 2) {
+            computerensHaand = Haand.SAKS;
+        }
+        if (haandInt == 3) {
+            computerensHaand = Haand.PAPIR;
+        }
+        // indlæser spillerens hånd
+
+        System.out.println("vælg mellem sten, saks og papir ");
+        Scanner scanner = new Scanner(System.in);
+        Haand spillerensHaand = null;
+        String spillerenString = scanner.next().toLowerCase();
+        if (spillerenString.equals("sten")) {
+            spillerensHaand = Haand.STEN;
+        }
+        if (spillerenString.equals("saks")) {
+            spillerensHaand = Haand.SAKS;
+        }
+        if (spillerenString.equals("papir")) {
+            spillerensHaand = Haand.PAPIR;
+        }
+        // sammenligne dem med slaa()
+
+        int resultat = runde1.slaa(computerensHaand, spillerensHaand);
+        int spillerResultat = 0;
+        int computerResultat = 0;
+        //udråb en vinder af 1 runde
+        System.out.println("Computeren valgte " + computerensHaand + " og spilleren valgte " + spillerensHaand);
+
+        if (resultat == 1) {
+            System.out.println(" Computeren vinder");
+            computerResultat = +1;
+        }
+        if (resultat == 0) {
+            System.out.println("uafgjort");
+        }
+        if (resultat == 2) {
+            System.out.println("Spilleren vinder");
+            spillerResultat = +1;
+        }
+        if (resultat == -1) {
+            System.out.println("fejl ");
+        }
+    }
 
     /** Hvis første hånd vinder return 1
      * Hvis Anden Hånd vinder return 2
