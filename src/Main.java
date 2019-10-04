@@ -20,7 +20,7 @@ public class Main {
             SSP runde1 = new SSP();
             // Computer genere en hånd
             SSP.startSpillet(runde1);
-            //TODO uråb en vinder af kampen
+            //TODO Kamp point system
 
             /* System.out.println("Spillerens points!" + spillerResultat + "Computerens points!" + computerResultat);
 
